@@ -120,7 +120,7 @@ class MapProblem(GraphProblem):
         #        `my_variable_to_check is None`, and particularly do NOT use comparison (==).
 
         adjacent_edges = junction.outgoing_links
-        if adjacent_edges in None:
+        if adjacent_edges is None:
             return None
         for edge in adjacent_edges:
             if edge is None:
