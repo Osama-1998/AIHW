@@ -86,9 +86,10 @@ class MapProblem(GraphProblem):
         #                   Note: the result should be of type np.array.
         #                           you can convert a pd.DataFrame to np.array using pd.DataFrame.to_numpy()
         days_of_the_week = ['Sun', 'Mon', 'Tue', 'Wed'] # optional variable
-        raise NotImplementedError  # TODO: remove this line!
-
-
+        history_data = os.path.join(Consts.DATA_PATH, 'history_4_days_target_549.csv')
+        df = pd.read_csv(history_data)
+        mean = df.mean(axis=1).to_numpy()
+        self.time_to_goal_history_based_data = mean
         assert(type(self.time_to_goal_history_based_data) is np.ndarray) # self-check
 
 
