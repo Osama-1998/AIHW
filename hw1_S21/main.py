@@ -200,8 +200,11 @@ def map_problem_experiments():
     #       Use focal_epsilon=0.23, and max_focal_size=40.
     #       Use within_focal_priority_function=within_focal_h_sum_priority_function. This function
     #        (defined just above) is internally using the `HistoryBasedHeuristic`.
-    exit()  # TODO: remove!
-
+    a_star4 = AStarEpsilon(ShortestPathsBasedHeuristic,
+                           within_focal_priority_function=within_focal_h_sum_priority_function, focal_epsilon=0.23,
+                           max_focal_size=40)
+    res = a_star4.solve_problem(curr_time_map_problem)
+    print(res)
 
 def run_all_experiments():
     print('Running all experiments')
