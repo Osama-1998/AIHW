@@ -77,7 +77,7 @@ class AStarEpsilon(AStar):
         min_node = self.open.peek_next_node()
         eps_value = (1 + self.focal_epsilon) * min_node.expanding_priority
         focal = []
-        while (not self.open.is_empty()) and (self.open.peek_next_node().expanding_priority <= eps_value):
+        while (not self.open.is_empty()) and (self.open.peek_next_node().expanding_priority <= eps_value) and len(focal)<self.max_focal_size:
             node = self.open.pop_next_node()
             focal.append(node)
         h_arr = []
